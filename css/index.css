@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+    --very-light-gray: hsl(0, 0%, 95%);
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+}
+
+h1{
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+}
+
+.card {
+    padding: 2rem;
+    width: 300px;
+    height: 400px;
+}
+
+.card:first-child{
+    background-color: var(--bright-orange);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.card:nth-child(2){
+    background-color: var(--dark-cyan);
+}
+
+.card:nth-child(3){
+    background-color: var(--very-dark-cyan)!important;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.card h1 {
+    color: var(--very-light-gray);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: hsla(0, 0%, 100%, 0.75);
+    margin-bottom: 2rem;
+}
+
+.card button {
+    background-color: var(--very-light-gray);
+    border: none;
+    border-radius: 30px/20px;
+    padding: 1rem;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.card[data-element="1"] button{
+    color: var(--bright-orange)!important;
+}
+
+.card[data-element="2"] button{
+    color: var(--dark-cyan)!important;
+}
+
+.card[data-element="3"] button{
+    color: var(--very-dark-cyan);
+}
+
+.card button:hover{
+    background-color: transparent;
+    color: hsla(0, 0%, 100%, 0.75)!important;
+    border: 1px solid hsla(0, 0%, 100%, 0.75);
+}
+
+
+@media screen and (max-width: 375px) {
+    body{
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .card:first-child{
+        background-color: var(--bright-orange);
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 10px;
+    }
+
+    .card:nth-child(3){
+        background-color: var(--very-dark-cyan)!important;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+}
